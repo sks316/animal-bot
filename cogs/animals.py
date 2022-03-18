@@ -86,12 +86,24 @@ class Animals(commands.Cog):
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
 
+    @nextcord.slash_command(name="lizard", description="Get a picture of a lizard!")
+    async def lizard(self, interaction: nextcord.Interaction):
+        #--Get image from nekos.life API--#
+        async with aiohttp.ClientSession() as session:
+            async with session.get('https://nekos.life/api/v2/img/lizard') as lizard:
+                data = await lizard.json()
+                image = data["url"]
+                embed = nextcord.Embed(title=f"🦎 Here's your cute lizard!!", color=0x8253c3)
+                embed.set_image(url=image)
+                embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
+                await interaction.response.send_message(embed=embed)
+
     @nextcord.slash_command(name="help", description="Sends a full list of commands to your DMs.")
     async def help(self, interaction: nextcord.Interaction):
         embed = nextcord.Embed(title=botver, description="This bot uses slash commands! You can use / to run a command.", color=0x7289da)
-        embed.add_field(name="Animals:", value="**/cat** - Get a picture of a kitty!\n**/dog** - Get a picture of a doggy!\n**/bunny** - Get a picture of a bunny!\n**/duck** - Get a picture of a duck!", inline=False)
+        embed.add_field(name="Animals:", value="**/cat** - Get a picture of a kitty!\n**/dog** - Get a picture of a doggy!\n**/bunny** - Get a picture of a bunny!\n**/duck** - Get a picture of a duck!\n**/lizard** - Get a picture of a lizard!", inline=False)
         embed.add_field(name="Other:", value="**/info** - See information about the bot, such as its uptime.\n**/ping** - Returns the bot's latency.\n**/bug** - Submit a bug report if anything goes wrong. \n**/suggest** - Want to see something added to the bot? Suggest it!", inline=False)
-        embed.add_field(name="APIs Used:", value="random.cat\ndog.ceo\nbunnies.io\nrandom-d.uk", inline=False)
+        embed.add_field(name="APIs Used:", value="random.cat\ndog.ceo\nbunnies.io\nrandom-d.uk\nnekos.life", inline=False)
         embed.set_footer(text=botver + " by PrincessLillie#2523", icon_url=self.bot.user.avatar.url)
         await interaction.user.send(embed=embed)
         await interaction.response.send_message("✅ Sent the command list to your DMs!")

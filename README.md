@@ -43,6 +43,8 @@ bunnies.io
 
 random-d.uk
 
+nekos.life
+
 [invite]: https://discord.com/api/oauth2/authorize?client_id=954166535818215454&permissions=137439340608&scope=bot%20applications.commands
 [invite-badge]: https://img.shields.io/badge/invite%20me!-click%20here-black.svg?style=for-the-badge&colorB=7289DA
 

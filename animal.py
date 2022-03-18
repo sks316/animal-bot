@@ -25,9 +25,13 @@ botstatus =[
         'try /cat!',
         'try /dog!',
         'try /bunny!',
+        'try /duck!',
+        'try /lizard!',
         'with kitties!!',
         'with doggies!!',
         'with bunnies!!',
+        'with ducks!!',
+        'with lizards!!',
 ]
 
 @bot.event
