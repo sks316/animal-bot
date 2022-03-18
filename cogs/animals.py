@@ -27,7 +27,7 @@ class Animals(commands.Cog):
             async with session.get('https://aws.random.cat/meow') as kitty:
                 data = await kitty.json()
                 image = data["file"]
-                embed = nextcord.Embed(title=f"🐱 Here's your cute kitty!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐱 Here's your cute kitty!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -39,7 +39,7 @@ class Animals(commands.Cog):
             async with session.get('https://dog.ceo/api/breeds/image/random') as doggy:
                 data = await doggy.json()
                 image = data["message"]
-                embed = nextcord.Embed(title=f"🐶 Here's your cute doggy!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐶 Here's your cute doggy!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -51,7 +51,7 @@ class Animals(commands.Cog):
             async with session.get('https://dog.ceo/api/breeds/image/random') as doggy:
                 data = await doggy.json()
                 image = data["message"]
-                embed = nextcord.Embed(title=f"🐶 Here's your cute doggy!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐶 Here's your cute doggy!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -69,7 +69,7 @@ class Animals(commands.Cog):
                 seen = data["thisServed"]
                 total = data["totalServed"]
                 id = data["id"]
-                embed = nextcord.Embed(title=f"🐇 Here's your cute bunny!!", description=f"🔢 ID: {id}\n👀 This bunny has been seen {seen} times.\n🐰 {total} bunnies have been seen.\n🔗 https://www.bunnies.io/#{id}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐇 Here's your cute bunny!!", description=f"🔢 ID: {id}\n👀 This bunny has been seen {seen} times.\n🐰 {total} bunnies have been seen.\n🔗 https://www.bunnies.io/#{id}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -81,7 +81,7 @@ class Animals(commands.Cog):
             async with session.get('https://random-d.uk/api/random') as ducky:
                 data = await ducky.json()
                 image = data["url"]
-                embed = nextcord.Embed(title=f"🦆 Here's your cute duck!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🦆 Here's your cute duck!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -93,7 +93,7 @@ class Animals(commands.Cog):
             async with session.get('https://nekos.life/api/v2/img/lizard') as lizard:
                 data = await lizard.json()
                 image = data["url"]
-                embed = nextcord.Embed(title=f"🦎 Here's your cute lizard!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🦎 Here's your cute lizard!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -105,7 +105,7 @@ class Animals(commands.Cog):
             async with session.get('https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true') as shiba:
                 data = await shiba.json()
                 image = data[0]
-                embed = nextcord.Embed(title=f"🐶 Here's your cute shiba inu!!", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐶 Here's your cute shiba inu!!", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -118,7 +118,7 @@ class Animals(commands.Cog):
                 data = await panda.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🐼 Here's your cute panda!!", description=f"Random panda fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐼 Here's your cute panda!!", description=f"Random panda fact: {fact}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -131,7 +131,7 @@ class Animals(commands.Cog):
                 data = await fox.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🦊 Here's your cute fox!!", description=f"Random fox fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🦊 Here's your cute fox!!", description=f"Random fox fact: {fact}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -144,7 +144,7 @@ class Animals(commands.Cog):
                 data = await bird.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🐦 Here's your cute bird!!", description=f"Random bird fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐦 Here's your cute bird!!", description=f"Random bird fact: {fact}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -157,7 +157,7 @@ class Animals(commands.Cog):
                 data = await raccoon.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🦝 Here's your cute raccoon!!", description=f"Random raccoon fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🦝 Here's your cute raccoon!!", description=f"Random raccoon fact: {fact}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -170,7 +170,7 @@ class Animals(commands.Cog):
                 data = await kangaroo.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🦘 Here's your cute kangaroo!!", description=f"Random kangaroo fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🦘 Here's your cute kangaroo!!", description=f"Random kangaroo fact: {fact}", color=0x7289da)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
