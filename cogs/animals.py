@@ -182,7 +182,10 @@ class Animals(commands.Cog):
         embed.add_field(name="Other:", value="**/info** - See information about the bot, such as its uptime.\n**/ping** - Returns the bot's latency.\n**/bug** - Submit a bug report if anything goes wrong. \n**/suggest** - Want to see something added to the bot? Suggest it!", inline=False)
         embed.add_field(name="APIs Used:", value="random.cat\ndog.ceo\nbunnies.io\nrandom-d.uk\nnekos.life\nshibe.online\nsome-random-api.ml", inline=False)
         embed.set_footer(text=botver + " by PrincessLillie#2523", icon_url=self.bot.user.avatar.url)
-        await interaction.user.send(embed=embed)
+        try:
+            await interaction.user.send(embed=embed)
+        except:
+            return await interaction.response.send_message("❌ I couldn't send you the command list. Make sure your DMs are open, and make sure you don't have me blocked.")
         await interaction.response.send_message("✅ Sent the command list to your DMs!")
 
 def setup(bot):
