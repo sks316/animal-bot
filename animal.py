@@ -34,6 +34,7 @@ botstatus =[
         'with bunnies!!',
         'with ducks!!',
         'with lizards!!',
+        'with shiba inus!!',
         'with pandas!!',
 ]
 
