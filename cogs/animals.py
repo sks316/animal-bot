@@ -118,7 +118,33 @@ class Animals(commands.Cog):
                 data = await panda.json()
                 image = data["image"]
                 fact = data["fact"]
-                embed = nextcord.Embed(title=f"🐼 Here's your cute panda!!", description=f"Panda fact: {fact}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐼 Here's your cute panda!!", description=f"Random panda fact: {fact}", color=0x8253c3)
+                embed.set_image(url=image)
+                embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
+                await interaction.response.send_message(embed=embed)
+
+    @nextcord.slash_command(name="fox", description="Get a picture of a fox!")
+    async def fox(self, interaction: nextcord.Interaction):
+        #--Get image from some-random-api.ml API--#
+        async with aiohttp.ClientSession() as session:
+            async with session.get('https://some-random-api.ml/animal/fox') as fox:
+                data = await fox.json()
+                image = data["image"]
+                fact = data["fact"]
+                embed = nextcord.Embed(title=f"🦊 Here's your cute fox!!", description=f"Random fox fact: {fact}", color=0x8253c3)
+                embed.set_image(url=image)
+                embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
+                await interaction.response.send_message(embed=embed)
+
+    @nextcord.slash_command(name="bird", description="Get a picture of a bird!")
+    async def bird(self, interaction: nextcord.Interaction):
+        #--Get image from some-random-api.ml API--#
+        async with aiohttp.ClientSession() as session:
+            async with session.get('https://some-random-api.ml/animal/birb') as bird:
+                data = await bird.json()
+                image = data["image"]
+                fact = data["fact"]
+                embed = nextcord.Embed(title=f"🐦 Here's your cute bird!!", description=f"Random bird fact: {fact}", color=0x8253c3)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
@@ -126,7 +152,7 @@ class Animals(commands.Cog):
     @nextcord.slash_command(name="help", description="Sends a full list of commands to your DMs.")
     async def help(self, interaction: nextcord.Interaction):
         embed = nextcord.Embed(title=botver, description="This bot uses slash commands! You can use / to run a command.", color=0x7289da)
-        embed.add_field(name="Animals:", value="**/cat** - Get a picture of a kitty!\n**/dog** - Get a picture of a doggy!\n**/bunny** - Get a picture of a bunny!\n**/duck** - Get a picture of a duck!\n**/lizard** - Get a picture of a lizard!\n**/shiba** - Get a picture of a shiba inu!\n**/panda** - Get a picture of a panda!", inline=False)
+        embed.add_field(name="Animals:", value="**/cat** - Get a picture of a kitty!\n**/dog** - Get a picture of a doggy!\n**/bunny** - Get a picture of a bunny!\n**/duck** - Get a picture of a duck!\n**/lizard** - Get a picture of a lizard!\n**/shiba** - Get a picture of a shiba inu!\n**/panda** - Get a picture of a panda!\n**/fox** - Get a picture of a fox!\n**/bird** - Get a picture of a bird!", inline=False)
         embed.add_field(name="Other:", value="**/info** - See information about the bot, such as its uptime.\n**/ping** - Returns the bot's latency.\n**/bug** - Submit a bug report if anything goes wrong. \n**/suggest** - Want to see something added to the bot? Suggest it!", inline=False)
         embed.add_field(name="APIs Used:", value="random.cat\ndog.ceo\nbunnies.io\nrandom-d.uk\nnekos.life\nshibe.online\nsome-random-api.ml", inline=False)
         embed.set_footer(text=botver + " by PrincessLillie#2523", icon_url=self.bot.user.avatar.url)
