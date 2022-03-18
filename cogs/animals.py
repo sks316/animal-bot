@@ -69,7 +69,7 @@ class Animals(commands.Cog):
                 seen = data["thisServed"]
                 total = data["totalServed"]
                 id = data["id"]
-                embed = nextcord.Embed(title=f"🐇 Here's your cute bunny!", description=f"🔢 ID: {id}\n👀 This bunny has been seen {seen} times.\n🐰 {total} bunnies have been seen.\n🔗 https://www.bunnies.io/#{id}", color=0x8253c3)
+                embed = nextcord.Embed(title=f"🐇 Here's your cute bunny!!", description=f"🔢 ID: {id}\n👀 This bunny has been seen {seen} times.\n🐰 {total} bunnies have been seen.\n🔗 https://www.bunnies.io/#{id}", color=0x8253c3)
                 embed.set_image(url=image)
                 embed.set_footer(text="Requested by " + interaction.user.display_name + " - " + botver + " by PrincessLillie#2523", icon_url=interaction.user.display_avatar.url)
                 await interaction.response.send_message(embed=embed)
